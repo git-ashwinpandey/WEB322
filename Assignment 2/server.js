@@ -14,10 +14,10 @@ const express = require('express');
 
 legoData.initialize();
 
-const app = express(); // obtain the "app" object
-const HTTP_PORT = process.env.PORT || 8080; // assign a port
+const app = express(); 
+const HTTP_PORT = process.env.PORT || 8080;
 
-// start the server on the port and output a confirmation ot the console
+
 app.listen(HTTP_PORT, () => console.log(`server listening on: ${HTTP_PORT}`));
 
 app.get('/', (req, res) => {

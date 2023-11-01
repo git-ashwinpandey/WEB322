@@ -15,9 +15,9 @@ function initialize() {
                 t_sets.theme = result.name;
                 sets.push(t_sets);
             });
-            resolve(); // Resolve with no data once the operation is complete
+            resolve(); 
         } catch (error) {
-            reject(error); // Reject with an error message if an error occurs
+            reject(error); 
         }
     });
 }
@@ -25,7 +25,7 @@ function initialize() {
 function getAllSets() {
     return new Promise((resolve, reject) => {
         try {
-            resolve(sets); // Resolve with the completed "sets" array
+            resolve(sets); 
         } catch (error) {
             reject(error);
         }
@@ -37,9 +37,9 @@ function getSetByNum(setNum) {
         try {
             const result = sets.find((set) => set.set_num === setNum);
             if (result) {
-                resolve(result); // Resolve with the found "set" object
+                resolve(result); 
             } else {
-                reject("Unable to find requested set"); // Reject if the set was not found
+                reject("Unable to find requested set"); 
             }
         } catch (error) {
             reject(error);
@@ -53,9 +53,9 @@ function getSetsByTheme(theme) {
             const themeLower = theme.toLowerCase();
             const matchingSets = sets.filter((set) => set.theme.toLowerCase().includes(themeLower));
             if (matchingSets.length > 0) {
-                resolve(matchingSets); // Resolve with the found "set" objects
+                resolve(matchingSets); 
             } else {
-                reject("Unable to find requested sets"); // Reject if no sets were found
+                reject("Unable to find requested sets"); 
             }
         } catch (error) {
             reject(error);
